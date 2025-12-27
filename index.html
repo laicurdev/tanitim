@@ -1,82 +1,92 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LAICURDEV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<!-- Scroll Progress -->
+<div id="progress"></div>
+
+<!-- NAVBAR -->
+<header class="navbar">
   <div class="logo">LAICURDEV</div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>LAICURDEV COMMUNITY</h1>
-  <p>Gaming • Development • Community</p>
-  <div class="scroll">↓ scroll</div>
-</section>
+  <h1>LAICURDEV</h1>
+  <p class="subtitle">Geliştirici • İçerik Üreticisi • Topluluk Kurucusu</p>
 
-<section class="section reveal">
-  <div class="content">
-    <h2>Discord Sunucusu</h2>
-    <p>
-      Aktif topluluk, sohbet, projeler ve özel duyurular.  
-      Geliştiriciler ve oyuncular için güçlü ve samimi bir ortam.
-    </p>
-    <a href="https://discord.gg/laicur" target="_blank" class="btn discord">
-      Discord’a Katıl
-    </a>
+  <div class="cta">
+    <a href="https://discord.gg/laicur" target="_blank" class="btn primary">Discord Sunucusuna Katıl</a>
+    <a href="https://www.youtube.com/@laicurdev" target="_blank" class="btn">YouTube Kanalı</a>
   </div>
 </section>
 
-<section class="section reveal">
-  <div class="content">
-    <h2>YouTube Kanalı</h2>
-    <p>
-      Oyun geliştirme, rehberler ve kaliteli içerikler.  
-      Öğretici ve eğlenceli videolar burada.
-    </p>
-    <a href="https://www.youtube.com/@laicurdev" target="_blank" class="btn youtube">
-      YouTube’a Git
-    </a>
-  </div>
-</section>
+<!-- CONTENT -->
+<section class="content">
 
-<section class="section reveal">
-  <div class="content">
-    <h2>TikTok</h2>
+  <div class="card reveal">
+    <h2>💬 Discord Topluluğu</h2>
     <p>
-      Kısa, hızlı ve eğlenceli içerikler.  
-      Günlük klipler ve anlık paylaşımlar.
+      Aktif ve samimi bir topluluk.  
+      Projeler, sohbet, içerikler ve birebir iletişim.
     </p>
-    <a href="https://www.tiktok.com/@laicurdev" target="_blank" class="btn tiktok">
-      TikTok’u Aç
-    </a>
+    <a href="https://discord.gg/laicur" target="_blank">Sunucuya Katıl →</a>
   </div>
+
+  <div class="card reveal">
+    <h2>🎥 YouTube Kanalı</h2>
+    <p>
+      Yazılım, projeler, içerik üretimi  
+      ve gelişim odaklı videolar.
+    </p>
+    <a href="https://www.youtube.com/@laicurdev" target="_blank">Kanala Git →</a>
+  </div>
+
+  <div class="card reveal">
+    <h2>📱 TikTok</h2>
+    <p>
+      Kısa, hızlı ve öğretici içerikler.  
+      Günlük paylaşımlar.
+    </p>
+    <a href="https://www.tiktok.com/@laicurdev" target="_blank">TikTok Profilini Aç →</a>
+  </div>
+
 </section>
 
 <footer>
-  <p>© 2025 LAICURDEV</p>
+  © 2025 LAICURDEV • Tüm hakları saklıdır
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll(".reveal");
-
-  function revealOnScroll() {
+  // Scroll animasyonu
+  const reveals = document.querySelectorAll('.reveal');
+  const revealOnScroll = () => {
     reveals.forEach(el => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-
-      if (elementTop < windowHeight - 100) {
-        el.classList.add("active");
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        el.classList.add('active');
       }
     });
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
+  };
+  window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
+
+  // Scroll progress bar
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById("progress").style.width = (scrollTop / height) * 100 + "%";
+  });
 </script>
 
 </body>
