@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LAICURDEV</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -26,27 +26,41 @@
   </div>
 </section>
 
-<section class="content grid">
+<!-- AYRI AYRI BÜYÜK BLOKLAR -->
+<section class="sections">
 
-  <div class="card reveal">
+  <div class="section reveal">
     <img src="assets/discord.png" alt="Discord">
-    <h2>Discord Topluluğu</h2>
-    <p>Aktif, samimi ve projelerle dolu bir sunucu.</p>
-    <a href="https://discord.gg/laicur" target="_blank">Katıl →</a>
+    <div class="text">
+      <h2>Discord Topluluğu</h2>
+      <p>
+        Aktif, samimi ve boş muhabbet değil gerçekten topluluk hissi veren bir sunucu.
+        Projeler, sohbet ve birebir iletişim.
+      </p>
+      <a href="https://discord.gg/laicur" target="_blank">Sunucuya Katıl →</a>
+    </div>
   </div>
 
-  <div class="card reveal">
+  <div class="section reveal">
     <img src="assets/youtube.png" alt="YouTube">
-    <h2>YouTube Kanalı</h2>
-    <p>Yazılım, projeler ve içerik üretimi.</p>
-    <a href="https://www.youtube.com/@laicurdev" target="_blank">Kanala Git →</a>
+    <div class="text">
+      <h2>YouTube Kanalı</h2>
+      <p>
+        Yazılım, projeler ve içerik üretimi üzerine sade, direkt ve boş yapmayan videolar.
+      </p>
+      <a href="https://www.youtube.com/@laicurdev" target="_blank">Kanala Git →</a>
+    </div>
   </div>
 
-  <div class="card reveal">
+  <div class="section reveal">
     <img src="assets/tiktok.png" alt="TikTok">
-    <h2>TikTok</h2>
-    <p>Kısa, hızlı ve öğretici paylaşımlar.</p>
-    <a href="https://www.tiktok.com/@laicurdev" target="_blank">Profile Git →</a>
+    <div class="text">
+      <h2>TikTok</h2>
+      <p>
+        Kısa, net, hızlı içerikler. Uzatmadan bilgi ve eğlence.
+      </p>
+      <a href="https://www.tiktok.com/@laicurdev" target="_blank">Profile Git →</a>
+    </div>
   </div>
 
 </section>
@@ -56,6 +70,7 @@
 </footer>
 
 <script>
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const revealOnScroll = () => {
     reveals.forEach(el => {
@@ -67,6 +82,7 @@
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll();
 
+  // Progress bar
   window.addEventListener("scroll", () => {
     const s = document.documentElement.scrollTop;
     const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
