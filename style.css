@@ -1,37 +1,89 @@
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif;}
-body { background:#0f0f0f; color:#fff; min-height:100vh; }
-header { position:fixed; top:0; left:0; width:100%; padding:20px 40px; background:rgba(0,0,0,0.6); backdrop-filter:blur(10px); z-index:100; }
-header h1 { font-size:26px; font-weight:800; letter-spacing:2px; }
-
-main { padding-top:100px; max-width:600px; margin:auto; display:flex; flex-direction:column; gap:20px; }
-
-.card {
-    background: rgba(255,255,255,0.05);
-    border-radius:15px;
-    padding:25px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    cursor:pointer;
-    transition:0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    opacity:0;
-    transform:translateY(20px);
+/* Genel ayarlar */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000;
+    color: #fff;
+    scroll-behavior: smooth;
 }
 
-.card.show { opacity:1; transform:translateY(0); }
+/* Başlık */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
 
-/* Hover Glow */
-.card:hover { 
-    box-shadow: 0 0 20px #00cfff, 0 0 40px #00cfff55;
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+/* Ana içerik */
+main {
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Kartlar */
+.card {
+    background: #111;
+    width: 80%;
+    max-width: 600px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.3s; }
+.card:nth-child(2) { animation-delay: 0.6s; }
+.card:nth-child(3) { animation-delay: 0.9s; }
+
+.card h2 {
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #ff4500;
+}
+
+.card p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+.card a {
+    text-decoration: none;
+    color: #000;
+    background-color: #ff4500;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background-color: #e03e00;
     transform: scale(1.05);
 }
 
-/* Tıklandığında efekt */
-.card:active {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff80 inset;
+/* Animasyon */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
-.card svg { width:40px; height:40px; fill:#00cfff; transition:0.3s; }
-.card span { font-size:18px; font-weight:600; }
-.card p { font-size:14px; opacity:0.8; margin-left:55px; }
