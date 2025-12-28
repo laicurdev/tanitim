@@ -5,28 +5,38 @@
   <title>Giriş / Kayıt - LAICURDEV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
 </head>
 <body>
 
+<header>
+  <div class="logo">LAICURDEV</div>
+</header>
+
 <section class="section reveal">
   <div class="content">
     <h2>Kayıt Ol</h2>
-    <input type="email" id="regEmail" placeholder="Email"><br>
-    <input type="password" id="regPassword" placeholder="Şifre"><br>
-    <button onclick="register()">Kayıt Ol</button>
+    <input type="email" id="regEmail" placeholder="Email" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <input type="password" id="regPassword" placeholder="Şifre" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <button onclick="register()" style="padding:10px 20px; margin:10px;">Kayıt Ol</button>
 
-    <hr>
+    <hr style="margin:20px 0; border-color:white;">
 
     <h2>Giriş Yap</h2>
-    <input type="email" id="logEmail" placeholder="Email"><br>
-    <input type="password" id="logPassword" placeholder="Şifre"><br>
-    <button onclick="login()">Giriş Yap</button>
+    <input type="email" id="logEmail" placeholder="Email" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <input type="password" id="logPassword" placeholder="Şifre" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <button onclick="login()" style="padding:10px 20px; margin:10px;">Giriş Yap</button>
   </div>
 </section>
 
+<footer>
+  <p>© 2025 LAICURDEV</p>
+</footer>
+
 <script>
+  // Firebase config
   const firebaseConfig = {
     apiKey: "AIzaSyB9xXxMyDLQTaySJjkeqmo7HgdcUF4z3eg",
     authDomain: "laicurdev.firebaseapp.com",
@@ -53,6 +63,20 @@
       .then(() => alert("Giriş başarılı!"))
       .catch(err => alert(err.message));
   }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll(".reveal");
+  function revealOnScroll() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
 </script>
 
 </body>
