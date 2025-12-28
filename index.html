@@ -1,94 +1,167 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LAICURDEV</title>
+    <meta charset="UTF-8">
+    <title>LAICURDEV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #151515);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        main {
+            padding-top: 120px;
+            padding-bottom: 100px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 120px;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 30px;
+            width: 320px;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #ffffff;
+            color: #000;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .card a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            opacity: 0.4;
+            font-size: 13px;
+        }
+    </style>
 </head>
 <body>
 
-<div id="progress"></div>
-
-<header class="navbar">
-  <div class="logo">LAICURDEV</div>
+<header>
+    <h1>LAICURDEV</h1>
 </header>
 
-<section class="hero">
-  <h1>LAICURDEV</h1>
-  <p class="subtitle">Geliştirici • İçerik Üreticisi • Topluluk Kurucusu</p>
+<main>
 
-  <div class="cta">
-    <a href="https://discord.gg/laicur" target="_blank" class="btn primary">Discord'a Katıl</a>
-    <a href="https://www.youtube.com/@laicurdev" target="_blank" class="btn">YouTube Kanalı</a>
-  </div>
-</section>
+    <section>
+        <h2>Topluluklarım</h2>
 
-<!-- AYRI AYRI BÜYÜK BLOKLAR -->
-<section class="sections">
+        <div class="cards">
 
-  <div class="section reveal">
-    <img src="assets/discord.png" alt="Discord">
-    <div class="text">
-      <h2>Discord Topluluğu</h2>
-      <p>
-        Aktif, samimi ve boş muhabbet değil gerçekten topluluk hissi veren bir sunucu.
-        Projeler, sohbet ve birebir iletişim.
-      </p>
-      <a href="https://discord.gg/laicur" target="_blank">Sunucuya Katıl →</a>
-    </div>
-  </div>
+            <!-- DISCORD -->
+            <div class="card">
+                <h3>Discord Sunucusu</h3>
+                <p>
+                    Aktif topluluk, sohbet, projeler ve özel içerikler.
+                    Takılmak, soru sormak ve destek almak için ideal.
+                </p>
+                <a href="https://discord.gg/laicur" target="_blank">Discord'a Katıl</a>
+            </div>
 
-  <div class="section reveal">
-    <img src="assets/youtube.png" alt="YouTube">
-    <div class="text">
-      <h2>YouTube Kanalı</h2>
-      <p>
-        Yazılım, projeler ve içerik üretimi üzerine sade, direkt ve boş yapmayan videolar.
-      </p>
-      <a href="https://www.youtube.com/@laicurdev" target="_blank">Kanala Git →</a>
-    </div>
-  </div>
+            <!-- YOUTUBE -->
+            <div class="card">
+                <h3>YouTube Kanalı</h3>
+                <p>
+                    Yazılım, oyun ve proje içerikleri.
+                    Kısa, net ve boş muhabbet yok.
+                </p>
+                <a href="https://www.youtube.com/@laicurdev" target="_blank">Kanala Git</a>
+            </div>
 
-  <div class="section reveal">
-    <img src="assets/tiktok.png" alt="TikTok">
-    <div class="text">
-      <h2>TikTok</h2>
-      <p>
-        Kısa, net, hızlı içerikler. Uzatmadan bilgi ve eğlence.
-      </p>
-      <a href="https://www.tiktok.com/@laicurdev" target="_blank">Profile Git →</a>
-    </div>
-  </div>
+            <!-- TIKTOK -->
+            <div class="card">
+                <h3>TikTok</h3>
+                <p>
+                    Hızlı içerikler, kısa ipuçları ve anlık paylaşımlar.
+                    Günlük şeyler burada.
+                </p>
+                <a href="https://www.tiktok.com/@laicurdev" target="_blank">TikTok'a Git</a>
+            </div>
 
-</section>
+        </div>
+    </section>
 
-<footer>
-  © 2025 LAICURDEV • Tüm hakları saklıdır
-</footer>
+    <footer>
+        © 2025 LAICURDEV
+    </footer>
 
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const revealOnScroll = () => {
-    reveals.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-        el.classList.add('active');
-      }
-    });
-  };
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll();
-
-  // Progress bar
-  window.addEventListener("scroll", () => {
-    const s = document.documentElement.scrollTop;
-    const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    document.getElementById("progress").style.width = (s / h) * 100 + "%";
-  });
-</script>
+</main>
 
 </body>
 </html>
