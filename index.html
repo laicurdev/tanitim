@@ -1,35 +1,82 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAICURDEV</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>LAICURDEV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>LAICURDEV</h1>
-    </header>
 
-    <main>
-        <section class="card">
-            <h2>Discord</h2>
-            <p>Topluluğumuza katıl ve güncel duyuruları kaçırma!</p>
-            <a href="https://discord.gg/laicur" target="_blank">Katıl</a>
-        </section>
+<header>
+  <div class="logo">LAICURDEV</div>
+</header>
 
-        <section class="card">
-            <h2>YouTube</h2>
-            <p>Projelerimi ve eğitim içeriklerimi takip et!</p>
-            <a href="https://www.youtube.com/@laicurdev" target="_blank">Abone Ol</a>
-        </section>
+<section class="hero">
+  <h1>LAICURDEV COMMUNITY</h1>
+  <p>Gaming • Development • Community</p>
+</section>
 
-        <section class="card">
-            <h2>TikTok</h2>
-            <p>Kısa ve eğlenceli içerikler için takip et!</p>
-            <a href="https://www.tiktok.com/@laicurdev" target="_blank">Takip Et</a>
-        </section>
-    </main>
+<section class="section reveal">
+  <div class="content">
+    <h2>Discord Sunucusu</h2>
+    <p>
+      Aktif topluluk, sohbet, projeler ve özel duyurular.  
+      Geliştiriciler ve oyuncular için güçlü bir ortam.
+    </p>
+    <a href="https://discord.gg/laicur" target="_blank" class="btn discord">
+      Discord’a Katıl
+    </a>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="content">
+    <h2>YouTube Kanalı</h2>
+    <p>
+      Oyun geliştirme, rehberler ve kaliteli içerikler.  
+      Destek olmak için kanala göz at.
+    </p>
+    <a href="https://www.youtube.com/@laicurdev" target="_blank" class="btn youtube">
+      YouTube’a Git
+    </a>
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="content">
+    <h2>TikTok</h2>
+    <p>
+      Kısa, hızlı ve eğlenceli içerikler.  
+      Günlük paylaşımlar ve anlık klipler.
+    </p>
+    <a href="https://www.tiktok.com/@laicurdev" target="_blank" class="btn tiktok">
+      TikTok’u Aç
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 LAICURDEV</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
 </body>
 </html>
-
