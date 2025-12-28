@@ -1,1 +1,62 @@
-.
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Giriş / Kayıt - LAICURDEV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+
+<section class="section reveal">
+  <div class="content">
+    <h2>Kayıt Ol</h2>
+    <input type="email" id="regEmail" placeholder="Email" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <input type="password" id="regPassword" placeholder="Şifre" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <button onclick="register()" style="padding:10px 20px; margin:5px;">Kayıt Ol</button>
+
+    <hr style="margin:20px 0; border-color:white;">
+
+    <h2>Giriş Yap</h2>
+    <input type="email" id="logEmail" placeholder="Email" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <input type="password" id="logPassword" placeholder="Şifre" style="width:80%; padding:10px; margin:5px 0;"><br>
+    <button onclick="login()" style="padding:10px 20px; margin:5px;">Giriş Yap</button>
+  </div>
+</section>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyB9xXxMyDLQTaySJjkeqmo7HgdcUF4z3eg",
+    authDomain: "laicurdev.firebaseapp.com",
+    projectId: "laicurdev",
+    storageBucket: "laicurdev.firebasestorage.app",
+    messagingSenderId: "1090144594844",
+    appId: "1:1090144594844:web:f265f7acd6c3b7e6cb7659"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  function register() {
+    const email = document.getElementById('regEmail').value;
+    const password = document.getElementById('regPassword').value;
+    auth.createUserWithEmailAndPassword(email, password)
+      .then(() => alert('Kayıt başarılı!'))
+      .catch(err => alert(err.message));
+  }
+
+  function login() {
+    const email = document.getElementById('logEmail').value;
+    const password = document.getElementById('logPassword').value;
+    auth.signInWithEmailAndPassword(email, password)
+      .then(() => alert('Giriş başarılı!'))
+      .catch(err => alert(err.message));
+  }
+</script>
+
+</body>
+</html>
+
