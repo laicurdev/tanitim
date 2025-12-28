@@ -116,17 +116,3 @@ footer {
   opacity: 0.4;
 }
 
-.chat-header {
-  background: #000; /* siyah arka plan */
-  text-align: center;
-  padding: 20px 0;
-}
-
-.chat-header h2 {
-  color: #fff; /* beyaz yazı */
-  font-size: 32px;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
-    0 0 20px #fff; /* hafif neon efekti */
-}
