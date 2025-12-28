@@ -1,61 +1,117 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>Giriş / Kayıt - LAICURDEV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-</head>
-<body>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
 
-<section class="section reveal">
-  <div class="content">
-    <h2>Kayıt Ol</h2>
-    <input type="email" id="regEmail" placeholder="Email" style="width:80%; padding:10px; margin:5px 0;"><br>
-    <input type="password" id="regPassword" placeholder="Şifre" style="width:80%; padding:10px; margin:5px 0;"><br>
-    <button onclick="register()" style="padding:10px 20px; margin:5px;">Kayıt Ol</button>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
 
-    <hr style="margin:20px 0; border-color:white;">
+body {
+  background: linear-gradient(180deg, #0f0f0f, #121212);
+  color: white;
+}
 
-    <h2>Giriş Yap</h2>
-    <input type="email" id="logEmail" placeholder="Email" style="width:80%; padding:10px; margin:5px 0;"><br>
-    <input type="password" id="logPassword" placeholder="Şifre" style="width:80%; padding:10px; margin:5px 0;"><br>
-    <button onclick="login()" style="padding:10px 20px; margin:5px;">Giriş Yap</button>
-  </div>
-</section>
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 60px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
 
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyB9xXxMyDLQTaySJjkeqmo7HgdcUF4z3eg",
-    authDomain: "laicurdev.firebaseapp.com",
-    projectId: "laicurdev",
-    storageBucket: "laicurdev.firebasestorage.app",
-    messagingSenderId: "1090144594844",
-    appId: "1:1090144594844:web:f265f7acd6c3b7e6cb7659"
-  };
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
 
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  function register() {
-    const email = document.getElementById('regEmail').value;
-    const password = document.getElementById('regPassword').value;
-    auth.createUserWithEmailAndPassword(email, password)
-      .then(() => alert('Kayıt başarılı!'))
-      .catch(err => alert(err.message));
-  }
+.hero h1 {
+  font-size: 52px;
+  font-weight: 800;
+}
 
-  function login() {
-    const email = document.getElementById('logEmail').value;
-    const password = document.getElementById('logPassword').value;
-    auth.signInWithEmailAndPassword(email, password)
-      .then(() => alert('Giriş başarılı!'))
-      .catch(err => alert(err.message));
-  }
-</script>
+.hero p {
+  margin-top: 15px;
+  opacity: 0.7;
+}
 
-</body>
-</html>
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+  background: rgba(255,255,255,0.05);
+  padding: 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+}
+
+.content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+}
+
+.discord { background: #5865F2; color: white; }
+.youtube { background: #ff0000; color: white; }
+.tiktok { background: #000; color: white; }
+
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  opacity: 0.4;
+}
